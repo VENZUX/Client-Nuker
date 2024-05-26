@@ -1,0 +1,26 @@
+-- Auto Chest Opener
+local Players = game:GetService("Players")
+
+-- Get the LocalPlayer
+local localPlayer = Players.LocalPlayer
+if not localPlayer then
+    error("Local player not found.")
+    return
+end
+
+while true do
+    -- Check if RaidChestSilver is available in the workspace
+    local raidChestSilver = game.Workspace:FindFirstChild("RaidChestSilver")
+    if raidChestSilver then
+        -- Get the HumanoidRootPart of the LocalPlayer
+        local humanoidRootPart = localPlayer.Character and localPlayer.Character:FindFirstChild("HumanoidRootPart")
+        if humanoidRootPart then
+            -- Teleport the RaidChestSilver to the player's position
+            raidChestSilver.ChestBase.CFrame = humanoidRootPart.CFrame
+        else
+            warn("HumanoidRootPart not found in the player's character.")
+        end
+    end
+    -- Wait before checking again (adjust this value as needed)
+    wait(1)
+end
