@@ -1,3 +1,8 @@
+-- Auto Next Level Skipper
+while wait() do
+game.Workspace.LobbyTeleport.Interaction.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+end
+
 -- Auto Chest Opener
 local Players = game:GetService("Players")
 
