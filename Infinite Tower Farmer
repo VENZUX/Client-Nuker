@@ -1,9 +1,3 @@
--- Auto Next Level Skipper
-while wait() do
-game.Workspace.LobbyTeleport.Interaction.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-end
-
--- Auto Chest Opener
 local Players = game:GetService("Players")
 
 -- Get the LocalPlayer
@@ -13,6 +7,13 @@ if not localPlayer then
     return
 end
 
+-- Auto Next Level Skipper
+while true do
+    game.Workspace.LobbyTeleport.Interaction.CFrame = localPlayer.Character.HumanoidRootPart.CFrame
+    wait() -- Add a short delay to prevent high CPU usage
+end
+
+-- Auto Chest Opener
 while true do
     -- Check if RaidChestSilver is available in the workspace
     local raidChestSilver = game.Workspace:FindFirstChild("RaidChestSilver")
