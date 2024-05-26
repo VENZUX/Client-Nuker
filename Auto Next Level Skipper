@@ -1,0 +1,4 @@
+-- Auto Next Level Skipper
+while wait() do
+game.Workspace.LobbyTeleport.Interaction.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+end
